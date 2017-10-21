@@ -1,0 +1,69 @@
+body, html {
+	height: 100%;
+}
+
+body, h2 {
+	font-family: 'Merienda', cursive;
+	text-align: center;
+}
+
+#container {
+	background-image: url("../images/spice_spoons.jpeg");
+	height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#header {
+	color: #a2160c;
+	padding-top: 20px;
+	margin-bottom: 0px;
+	font-size: 88px;
+}
+
+#subheader {
+	font-family: 'Merienda', cursive;
+	color: #ccc460;
+	font-size: 22px;
+}
+
+p {
+	font-family: 'Roboto', sans-serif;
+	font-size: 24px;
+}
+
+h2 {
+	font-family: 'Merienda', cursive;
+	font-size: 40px;
+}
+
+#question-and-answers {
+	padding: 30px;
+	opacity: 0.7;
+	box-shadow: 0 0 5px #f9faf5;
+	font-color: #092332;
+	background-color: #f9faf5;
+}
+
+#footer {
+	font-family: 'Roboto', sans-serif;
+	font-size: 12px;
+	color: #a2160c;
+	padding-right: 15px;
+	text-align: right;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+}
+
+a {
+	color: #a2160c;
+}
+
+a:hover {
+	opacity: 0.5;
+	color: #e87507;
+	text-decoration: none;
+}
