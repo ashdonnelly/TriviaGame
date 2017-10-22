@@ -1,6 +1,33 @@
-body, h2 {
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	text-align: center;
+}
+
+h1 {
 	font-family: 'Merienda', cursive;
 	text-align: center;
+}
+
+h2, h3 {
+	font-family: 'Merienda', cursive;
+	text-align: center;
+	line-height: 27px;
+}
+
+button {
+	font-family: 'Merienda', cursive;
+	text-align: center;
+	color: #092332;
+}
+
+#start-button {
+	margin: 200px;
+	padding: 30px;
+}
+
+#game-content, #end-content {
+	display: none;
 }
 
 #container {
@@ -12,7 +39,14 @@ body, h2 {
 
 #header {
 	color: #b13b2d;
-	padding-top: 20px;
+	padding-top: 0px;
+	margin-bottom: 0px;
+	font-size: 70px;
+}
+
+#header-top {
+	color: #b13b2d;
+	padding-top: 10px;
 	margin-bottom: 0px;
 	font-size: 70px;
 }
@@ -23,44 +57,45 @@ body, h2 {
 	font-size: 18px;
 }
 
-#timer-side {
-	top: 100;
-	left: 100;
-	width: 100%;	
-}
-
 #timer {
 	color: #f9faf5;
+	font-size: 88px;
+	position: absolute;
 	position: fixed;
-	font-size: 50px;
+	left: 200px;
 }
 
-#question-and-answers {
-	clear: both;
-	padding: 10px;
+#question-and-answers, #end-info{
+	padding: 30px;
 	opacity: 0.8;
 	box-shadow: 0 0 5px #f9faf5;
 	font-color: #092332;
 	background-color: #f9faf5;
 }
 
-p {
+.answers {
 	font-family: 'Roboto', sans-serif;
 	font-size: 20px;
 }
 
 h2 {
 	font-family: 'Merienda', cursive;
+	font-size: 20px;
+}
+
+img {
+	width: 60%;
+	height: 60%;
+}
+
+#end-info {
+	padding: 100px;
 }
 
 #footer {
 	font-family: 'Roboto', sans-serif;
 	color: #b13b2d;
 	padding: 15px;
-/*	position: fixed;
-	left: 0;
-	bottom: 0;
-	width: 100%;*/
 }
 
 a {
