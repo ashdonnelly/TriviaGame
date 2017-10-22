@@ -1,7 +1,3 @@
-body, html {
-	height: 100%;
-}
-
 body, h2 {
 	font-family: 'Merienda', cursive;
 	text-align: center;
@@ -9,57 +5,66 @@ body, h2 {
 
 #container {
 	background-image: url("../images/spice_spoons.jpeg");
-	height: 100%;
     background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 #header {
-	color: #a2160c;
+	color: #b13b2d;
 	padding-top: 20px;
 	margin-bottom: 0px;
-	font-size: 88px;
+	font-size: 70px;
 }
 
 #subheader {
 	font-family: 'Merienda', cursive;
 	color: #ccc460;
-	font-size: 22px;
+	font-size: 18px;
 }
 
-p {
-	font-family: 'Roboto', sans-serif;
-	font-size: 24px;
+#timer-side {
+	top: 100;
+	left: 100;
+	width: 100%;	
 }
 
-h2 {
-	font-family: 'Merienda', cursive;
-	font-size: 40px;
+#timer {
+	color: #f9faf5;
+	position: fixed;
+	font-size: 50px;
 }
 
 #question-and-answers {
-	padding: 30px;
-	opacity: 0.7;
+	clear: both;
+	padding: 10px;
+	opacity: 0.8;
 	box-shadow: 0 0 5px #f9faf5;
 	font-color: #092332;
 	background-color: #f9faf5;
 }
 
+p {
+	font-family: 'Roboto', sans-serif;
+	font-size: 20px;
+}
+
+h2 {
+	font-family: 'Merienda', cursive;
+}
+
 #footer {
 	font-family: 'Roboto', sans-serif;
-	font-size: 12px;
-	color: #a2160c;
-	padding-right: 15px;
-	text-align: right;
-	position: fixed;
+	color: #b13b2d;
+	padding: 15px;
+/*	position: fixed;
 	left: 0;
 	bottom: 0;
-	width: 100%;
+	width: 100%;*/
 }
 
 a {
-	color: #a2160c;
+	color: #b13b2d;
 }
 
 a:hover {
