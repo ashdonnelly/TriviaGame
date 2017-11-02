@@ -5,15 +5,15 @@
 	<title>Trivia Game | Ashley Donnelly</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-	<link rel="icon" type="image/x-icon" href="assets/images/source-code-icon-32-213242.png">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="icon" type="image/x-icon" href="assets/images/source-code-icon-32-213242.png">
 	<link href="https://fonts.googleapis.com/css?family=Merienda|Roboto" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
 	
-<div id="container">
+<div id="wrapper">
 	
 	<div id="header-subheader" class="row">
 		
@@ -23,102 +23,48 @@
 
 	</div>
 
-	<div class="col-md-12" id="start-section">
-		<button class="btn btn-lg btn-outline-danger" id="start-button">Start Game!</button>
-	</div>
-	
-	<div class="col-md-12" id="game-content">
+	<div class="row">
 
-		<h1 id="timer" class="col-md-12">120</h1>
-
-		<!-- <div class="col-md-3"></div> -->
-		
-		<div id="question-and-answers" class="col-md-6">
-
-			<form>
-
-				<fieldset id="group1">
-					<h2 id="question">In 19th century English pubs, it was popular to keep a shaker of this on the counter so patrons could flavor their drinks.</h2>
-					<input type="radio" value="" name="group1" class="correct-answer"> Ginger<br>
-					<input type="radio" value="" name="group1" class="answers"> Cinnamon<br>
-					<input type="radio" value="" name="group1" class="answers"> Clove<br>
-					<input type="radio" value="" name="group1" class="answers"> Hops<br>
-				</fieldset>
-
-				<hr>
-
-				<fieldset id="group2">
-					<h2 id="question">The ancient Greeks and Romans supposedly believed that this was the key to a successful Basil crop.</h2>
-					<input type="radio" value="" name="group2" class="answers" id="correct-answer"> Tilling the soil nude beneath a full moon<br>
-					<input type="radio" value="" name="group2" class="answers" id="correct-answer"> Screaming and shouting wild curses while sowing the seeds<br>
-					<input type="radio" value="" name="group2" class="answers"> Singing calming songs to the crop while weeding<br>
-					<input type="radio" value="" name="group2" class="answers"> All of the above<br>
-				</fieldset>
-
-				<hr>
-
-				<fieldset id="group3">
-					<h2 id="question">What is the world's largest herb?</h2>
-					<input type="radio" value="" name="group3" class="wrong-answer"> Tobacco<br>
-					<input type="radio" value="" name="group3" class="correct-answer"> Banana<br>
-					<input type="radio" value="" name="group3" class="wrong-answer"> Tea<br>
-					<input type="radio" value="" name="group3" class="wrong-answer"> Spearmint<br>
-				</fieldset>
-
-				<hr>
-
-				<fieldset id="group4">
-					<h2 id="question">This, the oldest documented spice, was described in texts from around 4000 BCE.</h2>
-					<input type="radio" value="" name="group4" class="wrong-answer"> Cumin<br>
-					<input type="radio" value="" name="group4" class="correct-answer"> Black Pepper<br>
-					<input type="radio" value="" name="group4" class="wrong-answer"> Masala<br>
-					<input type="radio" value="" name="group4" class="wrong-answer"> Mace<br>
-				</fieldset>
-
-				<hr>
-
-				<fieldset id="group5">
-					<h2 id="question">Chinese Five Spice is an traditional blend named for the five:</h2>
-					<input type="radio" value="" name="group5" class="wrong-answer"> Spices Present in the Blend<br>
-					<input type="radio" value="" name="group5" class="wrong-answer"> Great Southern  Dynasties<br>
-					<input type="radio" value="" name="group5" class="correct-answer"> Elements of Chinese Flavor Theory<br>
-					<input type="radio" value="" name="group5" class="wrong-answer"> Ancient Chinese Medicinal Humours<br>
-				</fieldset>
-
-				<hr>
-
-				<fieldset id="group6">
-					<h2 id="question">What is the world's only edible orchid?</h2>
-					<input type="radio" value="" name="group6" class="wrong-answer"> Passionflower<br>
-					<input type="radio" value="" name="group6" class="wrong-answer"> Anise<br>
-					<input type="radio" value="" name="group6" class="wrong-answer"> Saffron<br>
-					<input type="radio" value="" name="group6" class="correct-answer"> Vanilla<br>
-				</fieldset>
-
-				<hr>
-					
-				<button type="submit" class="btn btn-lg btn-outline-danger" id="submit-button">Submit Answers</button>
-
-			</form>
-
+		<div class="col-md-2">
 		</div>
 		
-		<div class="col-md-3"></div>
+		<div class="col-md-8" id="subwrapper">
+			<button class="btn btn-lg btn-danger" id="start-button">Start Game!</button>
+		</div>
+
+		<div class="col-md-2">	
+		</div>
+		
+		<div class="row col-md-12" id="game-content">
+		</div>
+
+		<!-- <h1 id="timer" class="col-md-12">90</h1> -->
+
+		<div class="col-md-2">
+		</div>
+		
+		<div id="question-and-answers" class="col-md-8">
+		</div>
+
+		<div class="col-md-2">
+		</div>
 
 	</div>
 
 	<div class="row" id="end-content">
 
-		<div class="col-md-3"></div>
+		<div class="col-md-2">
+		</div>
 
-		<div class="col-md-6" id="end-info">
+		<div class="col-md-8" id="end-info">
 			<!-- <img src="assets/images/spice_bae.gif" alt="Spice bae"> -->
 			<h1>Game Complete!</h1>
 			<h3>Correct: <span id="correct-answers"></span></h3>
 			<h3>Missed: <span id="missed-answers"></span></h3>
 		</div>
 
-		<div class="col-md-3"></div>
+		<div class="col-md-2">
+		</div>
 
 	</div>
 
@@ -129,6 +75,7 @@
 		</div>
 
 	</div>
+
 </div>
 
 <script type="text/javascript" src="assets/javascript/app.js"></script>

@@ -2,6 +2,11 @@ body {
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
 	text-align: center;
+	text-shadow: 0 0 3px white;
+	background-image: url("../images/spice_spoons.jpeg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 h1 {
@@ -22,38 +27,33 @@ button {
 }
 
 #start-button {
-	margin: 200px;
-	padding: 30px;
+	margin: 155px;
+	padding: 15px;
+	font-size: 30px;
 }
 
-#game-content, #end-content {
+#game-content,
+#end-content {
 	display: none;
 }
 
-#container {
-	background-image: url("../images/spice_spoons.jpeg");
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-}
-
 #header {
-	color: #b13b2d;
+	color: #536b3b;
 	padding-top: 0px;
 	margin-bottom: 0px;
 	font-size: 70px;
 }
 
 #header-top {
-	color: #b13b2d;
-	padding-top: 10px;
+	color: #536b3b;
+	padding-top: 20px;
 	margin-bottom: 0px;
 	font-size: 70px;
 }
 
 #subheader {
 	font-family: 'Merienda', cursive;
-	color: #ccc460;
+	color: #c1281c;
 	font-size: 18px;
 }
 
@@ -65,22 +65,31 @@ button {
 	left: 200px;
 }
 
-#question-and-answers, #end-info{
+#question-and-answers,
+#end-info {
+	font-family: 'Roboto', sans-serif;
 	padding: 30px;
-	opacity: 0.8;
-	box-shadow: 0 0 5px #f9faf5;
-	font-color: #092332;
-	background-color: #f9faf5;
+	color: #613546;
 }
 
-.answers {
-	font-family: 'Roboto', sans-serif;
-	font-size: 20px;
-}
+/*hr {
+	border: 0;
+    height: 1px;
+    background-color: #536b3b;
+}*/
 
 h2 {
 	font-family: 'Merienda', cursive;
 	font-size: 20px;
+}
+
+#answers-area {
+	font-family: 'Roboto', sans-serif;
+	font-size: 20px;
+	opacity: 0.8;
+	box-shadow: 0 0 5px #f9faf5;
+	font-color: #092332;
+	background-color: #f9faf5;
 }
 
 img {
@@ -89,21 +98,23 @@ img {
 }
 
 #end-info {
-	padding: 100px;
+	padding: 30px;
+	margin-top: 120px;
+	margin-bottom: 240px;
+	/*margin-left: 380px;*/
 }
 
 #footer {
-	font-family: 'Roboto', sans-serif;
-	color: #b13b2d;
+	color: #bed4b5;
 	padding: 15px;
 }
 
 a {
-	color: #b13b2d;
+	color: #bed4b5;
 }
 
 a:hover {
 	opacity: 0.5;
-	color: #e87507;
+	color: #536b3b;
 	text-decoration: none;
 }
