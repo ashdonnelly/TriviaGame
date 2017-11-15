@@ -32,13 +32,13 @@ var questions = [{
 	answers: ["Tobacco", "Spearmint", "Banana", "Tea"],
 	correctAnswer: "Banana"
 }, {
-	question: "Kung Pao chicken made in the US tasted different from the original Chinese dish because it was illegal to import Sichuan Peppercorns until the year ____.",
-	answers: ["1958", "1981", "2005", "2017"],
+	question: "Kung Pao chicken made in the US tasted different from the original Chinese dish because it was illegal to import Sichuan Peppercorns until the year:",
+	answers: ["1921", "1958", "1981","2005"],
 	correctAnswer: "2005"
 }, {
-	question: "Chinese Five Spice is an traditional blend named for the Five:",
-	answers: ["Spices in the Blend", "Flavors in the Blend", "Chinese Medicinal Humours", "Great Eastern Dynasties"],
-	correctAnswer: "Flavors in the Blend"
+	question: "Chinese Five Spice is a traditional spice blend named for the Five:",
+	answers: ["Spices in the Blend", "Elements of Chinese Flavor Theory", "Traditional Chinese Medicinal Humours", "Great Eastern Dynasties"],
+	correctAnswer: "Elements of Chinese Flavor Theory"
 }, {
 	question: "What is the world's only edible orchid?",
 	answers: ["Passionflower", "Anise", "Saffron", "Vanilla"],
