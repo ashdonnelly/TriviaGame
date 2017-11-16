@@ -42,7 +42,7 @@ var questions = [{
 var game = {
 	correct: 0,
 	incorrect: 0,
-	counter: 60,
+	counter: 5,
 	countdown: function() {
 		//decreases counter by 1 every second
 		game.counter--;
@@ -132,15 +132,26 @@ var game = {
 
 		//remove time remaining and say time is up
 		$("#subwrapper h2").remove();
-		$("#subwrapper").html("<h3 id='quiz-over-message'><b>Quiz Over!</b></h3>");
+		$("#subwrapper").html("<h3 id='quiz-over-message'><b>Game Over!</b></h3>");
 
 		//calculate and show corrects
-		$("#subwrapper").append("<h3>Correct: <b>" + this.correct + "</b>/<b>6</b></h3>");
+		$("#subwrapper").append("<h3>correct: <b>" + this.correct + "</b>/<b>6</b></h3>");
 
 		//calculate and show incorrects
-		$("#subwrapper").append("<h3>Inorrect: <b>" + this.incorrect + "</b>/<b>6</b></h3>");
+		$("#subwrapper").append("<h3>incorrect: <b>" + this.incorrect + "</b>/<b>6</b></h3>");
 
 		//calculate and show unanswereds; subtract incorrects and corrects from amount of questions
-		$("#subwrapper").append("<h3>Unaswered: <b>" + (questions.length - (this.incorrect + this.correct)) + "</b>/<b>6</b></h3>");
+		$("#subwrapper").append("<h3>unaswered: <b>" + (questions.length - (this.incorrect + this.correct)) + "</b>/<b>6</b></h3>");
+
+		$("#subwrapper").append("<hr>");
+		$("#subwrapper").append("<h3><b>Answers:</b></h3><hr>");
+
+		//display correct answers
+		$("#subwrapper").append(questions[0].question + "<br> <b>Answer:</b> " + questions[0].correctAnswer + "<hr>");
+		$("#subwrapper").append(questions[1].question + "<br> <b>Answer:</b> " + questions[1].correctAnswer + "<hr>");
+		$("#subwrapper").append(questions[2].question + "<br> <b>Answer:</b> " + questions[2].correctAnswer + "<hr>");
+		$("#subwrapper").append(questions[3].question + "<br> <b>Answer:</b> " + questions[3].correctAnswer + "<hr>");
+		$("#subwrapper").append(questions[4].question + "<br> <b>Answer:</b> " + questions[4].correctAnswer + "<hr>");
+		$("#subwrapper").append(questions[5].question + "<br> <b>Answer:</b> " + questions[5].correctAnswer + "<hr>");
 	}
 }
