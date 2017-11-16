@@ -37,6 +37,10 @@ button {
 	display: none;
 }
 
+#time-remaining {
+	padding-top: 20px;
+}
+
 #header {
 	color: #536b3b;
 	padding-top: 0px;
@@ -53,9 +57,13 @@ button {
 
 #subwrapper{
 	background-color: white;
-	opacity: 0.7;
+	opacity: 0.8;
 	border-radius: 8px;
 	padding-bottom: 20px;
+}
+
+#counter {
+	font-size: 30px;
 }
 
 #subheader {

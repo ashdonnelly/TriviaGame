@@ -1,17 +1,6 @@
 //start game when button is clicked
 $("#start-button").on("click", function() {
-
-	//remove subwrapper to start game
-	$("#start-button").remove();
-
-	//append each and every question with a name that is equal to the question and a value that s equal to the answer
-	//value is stored within the buttons themselves
-	for (var i = 0; i < questions.length; i++) {
-		$("#subwrapper").append("<hr>" + "<h2 id='question-and-answers'>" + questions[i].question + "<h2>")
-		for (var j = 0; j < questions[i].answers.length; j++) {
-			$("#subwrapper").append("<input type='radio' name='question-" + i + "' value='" + questions[i].answers[j] + "'> " + questions[i].answers[j] + "<br>")
-		}
-	}
+	game.start();
 });
 
 //======================================================================================
@@ -20,11 +9,11 @@ $("#start-button").on("click", function() {
 
 //questions var / objects
 var questions = [{
-	question: "In 19th century English pubs, it was popular to keep a shaker of this on the counter so patrons could flavor their drinks.",
+	question: "In 19th century English pubs, it was popular to keep a shaker of <i>this</i> on the counter so patrons could flavor their drinks.",
 	answers: ["Ginger", "Cinnamon", "Clove", "Hops"],
 	correctAnswer: "Ginger"
 }, {
-	question: "The ancient Greeks and Romans believed that this was the key to a successful Basil crop.",
+	question: "The ancient Greeks and Romans believed that <i>this</i> was the key to a successful Basil crop.",
 	answers: ["Tilling the soil nude beneath a full moon", "Screaming and shouting wild curses while sowing the seeds", "Singing calming songs to the crop while weeding", "All of the above"],
 	correctAnswer: "Screaming and shouting wild curses while sowing the seeds"
 }, {
@@ -36,9 +25,9 @@ var questions = [{
 	answers: ["1921", "1958", "1981","2005"],
 	correctAnswer: "2005"
 }, {
-	question: "Chinese Five Spice is a traditional spice blend named for the Five:",
-	answers: ["Spices in the Blend", "Elements of Chinese Flavor Theory", "Traditional Chinese Medicinal Humours", "Great Eastern Dynasties"],
-	correctAnswer: "Elements of Chinese Flavor Theory"
+	question: "Which of the following is not one of the Five Elements of Chinese Flavor Theory?",
+	answers: ["Sour", "Pungent", "Sweet", "Spicy", "Bitter", "Salty"],
+	correctAnswer: "Spicy"
 }, {
 	question: "What is the world's only edible orchid?",
 	answers: ["Passionflower", "Anise", "Saffron", "Vanilla"],
@@ -46,12 +35,110 @@ var questions = [{
 }];
 
 //======================================================================================
-// FUCTIONS
-//======================================================================================
+// MAIN PROCESSES AND FUNCTIONS
+//======================================================================
 
+// game object -- keeps track of amt correct, incorrect, and timer 
+var game = {
+	correct: 0,
+	incorrect: 0,
+	counter: 60,
+	countdown: function() {
+		game.counter--;
+		$("#counter").html(game.counter);
+		if(game.counter<=0) {
+			console.log("Time is up!");
+			game.done();
+		}
+	},
+	start: function() {
 
-//======================================================================================
-// MAIN PROCESSES (function calls aka game)
-//======================================================================================
+		//create timer interval
+		timer = setInterval(game.countdown, 1000);
 
+		//have timer count down
+		$("#subwrapper").prepend("<h2 id='time-remaining'>Time Remaining: <span id='counter'>60</span> seconds</h2>");
 
+		//remove button to start game
+		$("#start-button").remove();
+
+		//append each and every question with a name that is equal to the question and a value that s equal to the answer
+		//value is stored within the buttons themselves
+		for (var i = 0; i < questions.length; i++) {
+			$("#subwrapper").append("<hr>" + "<h2 id='question-and-answers'>" + questions[i].question + "<h2>");
+			for (var j = 0; j < questions[i].answers.length; j++) {
+				$("#subwrapper").append("<input type='radio' name='question-" + i + "' value='" + questions[i].answers[j] + "'> " + questions[i].answers[j] + "<br>")
+				}
+		}
+	},
+	done: function(){
+		//question 1 get user input; determine if correct/incorrect; add to score
+		$.each($("input[name='question 0]':checked"), function(){
+				if($(this).val()==questions[0].correctAnswer){
+					game.correct++;
+				} else {
+					game.incorrect++;
+				}
+		});
+		//question 2 get user input; determine if correct/incorrect; add to score
+		$.each($("input[name='question 1]':checked"), function(){
+				if($(this).val()==questions[1].correctAnswer){
+					game.correct++;
+				} else {
+					game.incorrect++;
+				}
+		});
+		//question 3 get user input; determine if correct/incorrect; add to score
+		$.each($("input[name='question 2]':checked"), function(){
+				if($(this).val()==questions[2].correctAnswer){
+					game.correct++;
+				} else {
+					game.incorrect++;
+				}
+		});
+		//question 4 get user input; determine if correct/incorrect; add to score
+		$.each($("input[name='question 3]':checked"), function(){
+				if($(this).val()==questions[3].correctAnswer){
+					game.correct++;
+				} else {
+					game.incorrect++;
+				}
+		});
+		//question 5 get user input; determine if correct/incorrect; add to score
+		$.each($("input[name='question 4]':checked"), function(){
+				if($(this).val()==questions[4].correctAnswer){
+					game.correct++;
+				} else {
+					game.incorrect++;
+				}
+		});
+		//question 6 get user input; determine if correct/incorrect; add to score
+		$.each($("input[name='question 5]':checked"), function(){
+				if($(this).val()==questions[5].correctAnswer){
+					game.correct++;
+				} else {
+					game.incorrect++;
+				}
+		});
+
+	this.result();
+	},
+
+	//print results of game
+	result: function(){
+		clearInterval(timer);
+
+		//remove time remaining and say time is up
+		$("#subwrapper h2").remove();
+		$("#subwrapper").html("<h2>Time's Up!</h2>");
+
+		//calculate and show corrects
+		$("#subwrapper").append("<h3>Correct Answers: " + this.correct + "</h3>");
+
+		//calculate and show incorrects
+		$("#subwrapper").append("<h3>Inorrect Answers: " + this.incorrect + "</h3>");
+
+		//calculate and show unanswereds; subtract incorrects and corrects from amount of questions
+		$("#subwrapper").append("<h3>Unaswered: " + (questions.length-(this.incorrect + this.correct)) + "</h3>");
+	}
+}
