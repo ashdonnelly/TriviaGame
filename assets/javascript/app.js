@@ -25,7 +25,7 @@ var questions = [{
 	answers: ["1921", "1958", "1981","2005"],
 	correctAnswer: "2005"
 }, {
-	question: "Which of the following is not one of the Five Elements of Chinese Flavor Theory?",
+	question: "Which of the following is <i>not</i> one of the Five Elements of Chinese Flavor Theory?",
 	answers: ["Sour", "Pungent", "Sweet", "Spicy", "Bitter", "Salty"],
 	correctAnswer: "Spicy"
 }, {
@@ -44,26 +44,28 @@ var game = {
 	incorrect: 0,
 	counter: 60,
 	countdown: function() {
+		//decreases counter by 1 every second
 		game.counter--;
+		//changes html element counter to show decreases in time known by game counter
 		$("#counter").html(game.counter);
-		if(game.counter<=0) {
+		if(game.counter <= 0) {
 			console.log("Time is up!");
 			game.done();
 		}
 	},
 	start: function() {
 
-		//create timer interval
+		//create timer interval for every 1 second (1000 millieconds)
 		timer = setInterval(game.countdown, 1000);
 
 		//have timer count down
 		$("#subwrapper").prepend("<h2 id='time-remaining'>Time Remaining: <span id='counter'>60</span> seconds</h2>");
 
-		//remove button to start game
+		//remove button and start game
 		$("#start-button").remove();
 
 		//append each and every question with a name that is equal to the question and a value that s equal to the answer
-		//value is stored within the buttons themselves
+		//value is stored within the radio buttons themselves
 		for (var i = 0; i < questions.length; i++) {
 			$("#subwrapper").append("<hr>" + "<h2 id='question-and-answers'>" + questions[i].question + "<h2>");
 			for (var j = 0; j < questions[i].answers.length; j++) {
@@ -73,15 +75,15 @@ var game = {
 	},
 	done: function(){
 		//question 1 get user input; determine if correct/incorrect; add to score
-		$.each($("input[name='question 0]':checked"), function(){
-				if($(this).val()==questions[0].correctAnswer){
+		$.each($("input[name='question-0']:checked"), function(){
+				if ($(this).val() == questions[0].correctAnswer){
 					game.correct++;
 				} else {
 					game.incorrect++;
 				}
 		});
 		//question 2 get user input; determine if correct/incorrect; add to score
-		$.each($("input[name='question 1]':checked"), function(){
+		$.each($("input[name='question-1']:checked"), function(){
 				if($(this).val()==questions[1].correctAnswer){
 					game.correct++;
 				} else {
@@ -89,7 +91,7 @@ var game = {
 				}
 		});
 		//question 3 get user input; determine if correct/incorrect; add to score
-		$.each($("input[name='question 2]':checked"), function(){
+		$.each($("input[name='question-2']:checked"), function(){
 				if($(this).val()==questions[2].correctAnswer){
 					game.correct++;
 				} else {
@@ -97,7 +99,7 @@ var game = {
 				}
 		});
 		//question 4 get user input; determine if correct/incorrect; add to score
-		$.each($("input[name='question 3]':checked"), function(){
+		$.each($("input[name='question-3']:checked"), function(){
 				if($(this).val()==questions[3].correctAnswer){
 					game.correct++;
 				} else {
@@ -105,7 +107,7 @@ var game = {
 				}
 		});
 		//question 5 get user input; determine if correct/incorrect; add to score
-		$.each($("input[name='question 4]':checked"), function(){
+		$.each($("input[name='question-4']:checked"), function(){
 				if($(this).val()==questions[4].correctAnswer){
 					game.correct++;
 				} else {
@@ -113,7 +115,7 @@ var game = {
 				}
 		});
 		//question 6 get user input; determine if correct/incorrect; add to score
-		$.each($("input[name='question 5]':checked"), function(){
+		$.each($("input[name='question-5']:checked"), function(){
 				if($(this).val()==questions[5].correctAnswer){
 					game.correct++;
 				} else {
@@ -130,15 +132,15 @@ var game = {
 
 		//remove time remaining and say time is up
 		$("#subwrapper h2").remove();
-		$("#subwrapper").html("<h2>Time's Up!</h2>");
+		$("#subwrapper").html("<h3 id='quiz-over-message'><b>Quiz Over!</b></h3>");
 
 		//calculate and show corrects
-		$("#subwrapper").append("<h3>Correct Answers: " + this.correct + "</h3>");
+		$("#subwrapper").append("<h3>Correct: <b>" + this.correct + "</b>/<b>6</b></h3>");
 
 		//calculate and show incorrects
-		$("#subwrapper").append("<h3>Inorrect Answers: " + this.incorrect + "</h3>");
+		$("#subwrapper").append("<h3>Inorrect: <b>" + this.incorrect + "</b>/<b>6</b></h3>");
 
 		//calculate and show unanswereds; subtract incorrects and corrects from amount of questions
-		$("#subwrapper").append("<h3>Unaswered: " + (questions.length-(this.incorrect + this.correct)) + "</h3>");
+		$("#subwrapper").append("<h3>Unaswered: <b>" + (questions.length - (this.incorrect + this.correct)) + "</b>/<b>6</b></h3>");
 	}
 }

@@ -32,13 +32,8 @@ button {
 	font-size: 30px;
 }
 
-#game-content,
-#end-content {
+#game-content {
 	display: none;
-}
-
-#time-remaining {
-	padding-top: 20px;
 }
 
 #header {
@@ -72,51 +67,23 @@ button {
 	font-size: 18px;
 }
 
-#timer {
-	color: #f9faf5;
-	font-size: 88px;
-	position: absolute;
-	position: fixed;
-	left: 200px;
+#time-remaining {
+	padding-top: 20px;
 }
 
-#question-and-answers,
-#end-info {
+#question-and-answers {
 	font-family: 'Roboto', sans-serif;
 	padding: 30px;
 	color: black;
-/*	opacity: 0.9;
-	box-shadow: 0 0 5px #f9faf5;
-	font-color: #092332;
-	background-color: #f9faf5;*/
 }
 
-/*hr {
-	border: 0;
-    height: 1px;
-    background-color: #536b3b;
-}*/
+#quiz-over-message {
+	padding-top: 20px;
+}
 
 h2 {
 	font-family: 'Merienda', cursive;
 	font-size: 20px;
-}
-
-#answers-area {
-	font-family: 'Roboto', sans-serif;
-	font-size: 20px;
-}
-
-img {
-	width: 60%;
-	height: 60%;
-}
-
-#end-info {
-	padding: 30px;
-	margin-top: 120px;
-	margin-bottom: 240px;
-	/*margin-left: 380px;*/
 }
 
 #footer {
