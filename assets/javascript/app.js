@@ -42,7 +42,7 @@ var questions = [{
 var game = {
 	correct: 0,
 	incorrect: 0,
-	counter: 5,
+	counter: 90,
 	countdown: function() {
 		//decreases counter by 1 every second
 		game.counter--;
@@ -59,7 +59,7 @@ var game = {
 		timer = setInterval(game.countdown, 1000);
 
 		//have timer count down
-		$("#subwrapper").prepend("<h2 id='time-remaining'>Time Remaining: <span id='counter'>60</span> seconds</h2>");
+		$("#subwrapper").prepend("<h2 id='time-remaining'>Time Remaining: <span id='counter'>90</span> seconds</h2>");
 
 		//remove button and start game
 		$("#start-button").remove();
